@@ -1,430 +1,430 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cinépolis</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html> <!-- Indica que el documento es un archivo HTML5 -->
+<html lang="es"> <!-- Define que el idioma de la página es español -->
+<head> <!-- Inicio de la cabecera del documento donde van los datos del sitio -->
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres para aceptar acentos y letras como la ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta la página al tamaño de la pantalla en dispositivos móviles -->
+  <title>Cinépolis</title> <!-- Define el título que aparece en la pestaña del navegador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conecta rápidamente con los servidores de fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Conecta de forma segura para cargar recursos tipográficos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Importa la fuente Montserrat desde Google Fonts -->
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
+  <style> /* Inicio de la sección de estilos CSS para dar formato y color */
+    * { /* Selecciona absolutamente todos los elementos del documento */
+      margin: 0; /* Quita los márgenes por defecto */
+      padding: 0; /* Quita los espacios internos por defecto */
+      box-sizing: border-box; /* Incluye el padding y bordes dentro del tamaño total del elemento */
+      font-family: 'Montserrat', sans-serif; /* Aplica la tipografía Montserrat a todo el sitio */
+    } /* Cierra la regla general */
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { /* Selecciona el elemento raíz de la página HTML */
+      scroll-behavior: smooth; /* Hace que el desplazamiento por los enlaces de ancla sea suave */
+    } /* Cierra la regla de html */
 
-    body {
-      background-color: #f0f2f5;
-    }
+    body { /* Selecciona el cuerpo visible de la página web */
+      background-color: #f0f2f5; /* Le da un color gris claro al fondo del sitio */
+    } /* Cierra la regla de body */
 
-    header {
-      background-color: #03091e;
-      padding: 20px;
-      text-align: center;
-    }
+    header { /* Selecciona el encabezado principal superior */
+      background-color: #03091e; /* Define el color azul marino oscuro para el fondo */
+      padding: 20px; /* Agrega espacio interno alrededor del contenido */
+      text-align: center; /* Centra el texto del título dentro del encabezado */
+    } /* Cierra la regla de header */
 
-    header h1 {
-      color: #ffffff;
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
+    header h1 { /* Selecciona el título de nivel 1 dentro del encabezado */
+      color: #ffffff; /* Pone el texto del título en color blanco */
+      font-size: 32px; /* Establece el tamaño de letra en 32 píxeles */
+      margin-bottom: 15px; /* Deja un espacio de 15 píxeles debajo del título */
+    } /* Cierra la regla de header h1 */
 
-    nav {
-      background-color: #03091e;
-      padding-bottom: 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    nav { /* Selecciona la barra de navegación */
+      background-color: #03091e; /* Pone el fondo del mismo azul marino que el encabezado */
+      padding-bottom: 10px; /* Agrega espacio en la parte inferior de la barra */
+      position: sticky; /* Mantiene la barra fija en la pantalla al bajar */
+      top: 0; /* Fija la barra en la parte superior exacta de la ventana */
+      z-index: 1000; /* Asegura que la barra quede por encima de los demás elementos */
+    } /* Cierra la regla de nav */
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
+    nav ul { /* Selecciona la lista desordenada dentro del nav */
+      list-style: none; /* Quita las viñetas o puntos de la lista */
+      display: flex; /* Alinea los elementos de la lista en una fila horizontal */
+      justify-content: center; /* Centra los botones del menú de forma horizontal */
+      gap: 20px; /* Agrega un espacio de 20 píxeles entre cada elemento */
+    } /* Cierra la regla de nav ul */
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-    }
+    nav a { /* Selecciona los enlaces del menú de navegación */
+      color: white; /* Pone el texto de los enlaces en color blanco */
+      text-decoration: none; /* Quita el subrayado predeterminado del texto */
+      font-weight: 600; /* Define un grosor de letra semi-negrita */
+      font-size: 16px; /* Ajusta el tamaño de la fuente a 16 píxeles */
+    } /* Cierra la regla de nav a */
 
-    nav a:hover {
-      color: #ffcc00;
-    }
+    nav a:hover { /* Cambia el estilo del enlace al pasar el cursor encima */
+      color: #ffcc00; /* Pone el texto en color amarillo cuando pasas el ratón */
+    } /* Cierra la regla de nav a:hover */
 
-    .contenido {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
+    .contenido { /* Selecciona el contenedor principal que envuelve las secciones */
+      width: 90%; /* Hace que ocupe el 90% del ancho disponible de la pantalla */
+      max-width: 1000px; /* Establece un ancho máximo de 1000 píxeles */
+      margin: 30px auto; /* Centra el contenedor horizontalmente y le da espacio arriba y abajo */
+    } /* Cierra la regla de .contenido */
 
-    .seccion-pagina {
-      margin-bottom: 50px;
-      padding-top: 10px;
-    }
+    .seccion-pagina { /* Selecciona las secciones individuales del sitio */
+      margin-bottom: 50px; /* Separa una sección de la siguiente con 50 píxeles */
+      padding-top: 10px; /* Agrega espacio superior para evitar que se corte el contenido al saltar con el menú */
+    } /* Cierra la regla de .seccion-pagina */
 
-    .destacada {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
+    .destacada { /* Selecciona la caja de la película destacada */
+      background-color: white; /* Fondo blanco para hacer resaltar el cuadro */
+      border: 1px solid #ddd; /* Borde gris claro para delimitar la caja */
+      border-radius: 8px; /* Redondea las esquinas del cuadro con 8 píxeles */
+      padding: 20px; /* Relleno interno de 20 píxeles en todos los lados */
+      display: flex; /* Organiza la imagen y el texto uno al lado del otro */
+      gap: 20px; /* Separa la imagen del texto por 20 píxeles */
+      align-items: center; /* Centra la imagen y el texto verticalmente */
+      margin-bottom: 40px; /* Agrega espacio debajo de la tarjeta destacada */
+    } /* Cierra la regla de .destacada */
 
-    .destacada img {
-      width: 250px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
+    .destacada img { /* Selecciona la imagen dentro de la tarjeta destacada */
+      width: 250px; /* Fija el ancho de la imagen en 250 píxeles */
+      height: 350px; /* Fija el alto de la imagen en 350 píxeles */
+      object-fit: cover; /* Ajusta la imagen recortándola proporcionalmente sin deformarla */
+      border-radius: 6px; /* Redondea los bordes de la imagen a 6 píxeles */
+    } /* Cierra la regla de .destacada img */
 
-    .destacada-texto h2 {
-      margin-bottom: 10px;
-      color: #03091e;
-    }
+    .destacada-texto h2 { /* Selecciona el título dentro del texto destacado */
+      margin-bottom: 10px; /* Separa el título del párrafo con 10 píxeles */
+      color: #03091e; /* Pone el texto en color azul marino */
+    } /* Cierra la regla de .destacada-texto h2 */
 
-    .destacada-texto p {
-      color: #555;
-      line-height: 1.5;
-    }
+    .destacada-texto p { /* Selecciona el párrafo descriptivo dentro del cuadro destacado */
+      color: #555; /* Color de texto gris oscuro para lectura cómoda */
+      line-height: 1.5; /* Espaciado entre líneas para mejorar la lectura */
+    } /* Cierra la regla de .destacada-texto p */
 
-    .titulo-seccion {
-      color: #03091e;
-      margin-bottom: 20px;
-    }
+    .titulo-seccion { /* Selecciona los títulos principales de cada sección */
+      color: #03091e; /* Color azul marino para coincidir con el diseño */
+      margin-bottom: 20px; /* Separa el título del catálogo que tiene abajo */
+    } /* Cierra la regla de .titulo-seccion */
 
-    .catalogo {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
+    .catalogo { /* Selecciona el contenedor de las cuadrículas de películas */
+      display: flex; /* Activa el modelo flexible de organización */
+      flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila si no caben */
+      gap: 20px; /* Define una separación uniforme de 20 píxeles entre las tarjetas */
+      justify-content: space-between; /* Distribuye las tarjetas ocupando el ancho disponible */
+    } /* Cierra la regla de .catalogo */
 
-    .tarjeta-pelicula {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      width: calc(33.33% - 14px); 
-      padding: 15px;
-      text-align: center;
-    }
+    .tarjeta-pelicula { /* Selecciona la tarjeta individual de cada película */
+      background-color: white; /* Color de fondo blanco */
+      border: 1px solid #ddd; /* Borde delgado gris claro */
+      border-radius: 8px; /* Bordes ligeramente redondeados */
+      width: calc(33.33% - 14px); /* Calcula el ancho exacto para acomodar 3 tarjetas por fila */
+      padding: 15px; /* Espacio interno de 15 píxeles */
+      text-align: center; /* Centra todo el contenido (imagen, título, género) */
+    } /* Cierra la regla de .tarjeta-pelicula */
 
-    .tarjeta-pelicula img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
+    .tarjeta-pelicula img { /* Selecciona la imagen de la película */
+      width: 100%; /* Ocupa el 100% del ancho de su tarjeta contenedor */
+      height: 250px; /* Define un alto estándar de 250 píxeles */
+      object-fit: cover; /* Evita que las imágenes se estiren o distorsionen */
+      border-radius: 6px; /* Esquinas redondeadas para la imagen */
+      margin-bottom: 10px; /* Separa la imagen del nombre de la película */
+    } /* Cierra la regla de .tarjeta-pelicula img */
 
-    .tarjeta-pelicula h3 {
-      font-size: 16px;
-      color: #03091e;
-      margin-bottom: 5px;
-    }
+    .tarjeta-pelicula h3 { /* Selecciona el nombre de la película */
+      font-size: 16px; /* Establece el tamaño de letra del título */
+      color: #03091e; /* Color del texto azul marino */
+      margin-bottom: 5px; /* Separa el título de los datos del género */
+    } /* Cierra la regla de .tarjeta-pelicula h3 */
 
-    .tarjeta-pelicula .genero {
-      font-size: 14px;
-      color: #666;
-    }
+    .tarjeta-pelicula .genero { /* Selecciona las etiquetas de texto de género/duración */
+      font-size: 14px; /* Tamaño de letra ligeramente más pequeño */
+      color: #666; /* Color de texto gris claro */
+    } /* Cierra la regla de .tarjeta-pelicula .genero */
 
-    .catalogo-alimentos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+    .catalogo-alimentos { /* Selecciona el contenedor del área de dulcería */
+      display: flex; /* Disposición flexible en fila */
+      flex-wrap: wrap; /* Hace que se adapten pasando abajo si falta espacio */
+      gap: 20px; /* Separa los productos entre sí por 20 píxeles */
+      justify-content: center; /* Centra las tarjetas de alimentos de forma horizontal */
+    } /* Cierra la regla de .catalogo-alimentos */
 
-    .tarjeta-alimento {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      width: calc(20% - 16px);
-      min-width: 160px;
-      padding: 15px;
-      text-align: center;
-    }
+    .tarjeta-alimento { /* Selecciona cada tarjeta de alimento */
+      background-color: white; /* Fondo de color blanco */
+      border: 1px solid #ddd; /* Borde fino de color gris */
+      border-radius: 8px; /* Esquinas redondeadas */
+      width: calc(20% - 16px); /* Ajusta el ancho para alinear 5 elementos en la fila */
+      min-width: 160px; /* Asegura un ancho mínimo en pantallas reducidas */
+      padding: 15px; /* Espacio interno dentro del cuadro */
+      text-align: center; /* Centra los textos e imagen */
+    } /* Cierra la regla de .tarjeta-alimento */
 
-    .tarjeta-alimento img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
+    .tarjeta-alimento img { /* Selecciona la imagen del producto de comida */
+      width: 100%; /* Ocupa el ancho completo de su tarjeta */
+      height: 140px; /* Define una altura uniforme de 140 píxeles */
+      object-fit: cover; /* Recorta suavemente la imagen para encajar */
+      border-radius: 6px; /* Esquinas redondeadas */
+      margin-bottom: 10px; /* Separa la foto del título del producto */
+    } /* Cierra la regla de .tarjeta-alimento img */
 
-    .tarjeta-alimento h3 {
-      font-size: 15px;
-      color: #03091e;
-      margin-bottom: 8px;
-    }
+    .tarjeta-alimento h3 { /* Selecciona el nombre del producto */
+      font-size: 15px; /* Tamaño de la tipografía */
+      color: #03091e; /* Color azul marino */
+      margin-bottom: 8px; /* Espacio antes del precio */
+    } /* Cierra la regla de .tarjeta-alimento h3 */
 
-    .tarjeta-alimento .precio {
-      font-size: 16px;
-      font-weight: 700;
-      color: #008000;
-    }
+    .tarjeta-alimento .precio { /* Selecciona el precio del alimento */
+      font-size: 16px; /* Tamaño de letra */
+      font-weight: 700; /* Texto en negrita resaltado */
+      color: #008000; /* Color verde para indicar costo */
+    } /* Cierra la regla de .tarjeta-alimento .precio */
 
-    .tarjeta-form {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 25px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
+    .tarjeta-form { /* Selecciona la caja contenedora del formulario */
+      background-color: white; /* Fondo blanco */
+      border: 1px solid #ddd; /* Borde gris claro */
+      border-radius: 8px; /* Bordes redondeados de 8 píxeles */
+      padding: 25px; /* Espaciado interno de 25 píxeles */
+      max-width: 500px; /* Ancho máximo de 500 píxeles */
+      margin: 0 auto; /* Centra la tarjeta horizontalmente */
+    } /* Cierra la regla de .tarjeta-form */
 
-    .tarjeta-form h3 {
-      color: #03091e;
-      margin-bottom: 12px;
-    }
+    .tarjeta-form h3 { /* Selecciona los títulos de Iniciar Sesión y Crear Cuenta */
+      color: #03091e; /* Color de texto azul marino */
+      margin-bottom: 12px; /* Margen inferior de 12 píxeles */
+    } /* Cierra la regla de .tarjeta-form h3 */
 
-    .tarjeta-form p {
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-      margin-top: 10px;
-      margin-bottom: 4px;
-    }
+    .tarjeta-form p { /* Selecciona las etiquetas de texto arriba de cada input */
+      font-size: 14px; /* Tamaño de texto de 14 píxeles */
+      font-weight: 600; /* Letra de grosor semi-negrita */
+      color: #333; /* Color de texto gris muy oscuro */
+      margin-top: 10px; /* Margen superior de 10 píxeles */
+      margin-bottom: 4px; /* Margen inferior de 4 píxeles */
+    } /* Cierra la regla de .tarjeta-form p */
 
-    .tarjeta-form input {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-    }
+    .tarjeta-form input { /* Selecciona las cajas de entrada de texto */
+      width: 100%; /* Expande la caja de entrada al 100% del ancho disponible */
+      padding: 8px 10px; /* Relleno interno para escribir cómodamente */
+      border: 1px solid #ccc; /* Borde fino gris para las casillas */
+      border-radius: 4px; /* Esquinas con ligero redondeo */
+      font-size: 14px; /* Tamaño de letra que se escribe adentro */
+    } /* Cierra la regla de .tarjeta-form input */
 
-    .tarjeta-form button {
-      width: 100%;
-      background-color: #03091e;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-top: 15px;
-      cursor: pointer;
-    }
+    .tarjeta-form button { /* Selecciona los botones del formulario */
+      width: 100%; /* El botón ocupa todo el ancho de la caja */
+      background-color: #03091e; /* Fondo de color azul marino */
+      color: white; /* Texto del botón en color blanco */
+      border: none; /* Sin borde exterior */
+      padding: 10px; /* Relleno interno de 10 píxeles */
+      border-radius: 4px; /* Redondeo de bordes */
+      font-weight: 700; /* Texto en negrita gruesa */
+      font-size: 14px; /* Tamaño del texto del botón */
+      margin-top: 15px; /* Espacio sobre el botón */
+      cursor: pointer; /* Cambia el puntero al icono de manita al pasar encima */
+    } /* Cierra la regla de .tarjeta-form button */
 
-    footer {
-      background-color: #03091e;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
+    footer { /* Selecciona el pie de página */
+      background-color: #03091e; /* Fondo azul marino */
+      color: white; /* Texto blanco */
+      text-align: center; /* Texto centrado horizontalmente */
+      padding: 20px; /* Espacio de relleno dentro del pie de página */
+      margin-top: 40px; /* Separa el pie de página del contenido superior */
+    } /* Cierra la regla de footer */
+  </style> <!-- Cierra el bloque de estilos CSS -->
+</head> <!-- Cierra la sección de la cabecera de la página -->
+<body> <!-- Inicio del cuerpo del documento que se muestra en pantalla -->
 
-  <header>
-    <h1>cinépolis</h1>
-  </header>
+  <header> <!-- Encabezado principal del sitio web -->
+    <h1>cinépolis</h1> <!-- Título principal del sitio web -->
+  </header> <!-- Cierra el encabezado principal -->
 
-  <nav>
-    <ul>
-      <li><a href="#cartelera">Cartelera</a></li>
-      <li><a href="#estrenos">Estrenos</a></li>
-      <li><a href="#alimentos">Alimentos</a></li>
-      <li><a href="#club-cinepolis">Club Cinépolis</a></li>
-    </ul>
-  </nav>
+  <nav> <!-- Inicio de la barra de navegación -->
+    <ul> <!-- Lista de enlaces de navegación -->
+      <li><a href="#cartelera">Cartelera</a></li> <!-- Enlace que salta a la sección de Cartelera -->
+      <li><a href="#estrenos">Estrenos</a></li> <!-- Enlace que salta a la sección de Estrenos -->
+      <li><a href="#alimentos">Alimentos</a></li> <!-- Enlace que salta a la sección de Alimentos -->
+      <li><a href="#club-cinepolis">Club Cinépolis</a></li> <!-- Enlace que salta a la sección de Club Cinépolis -->
+    </ul> <!-- Cierra la lista de enlaces -->
+  </nav> <!-- Cierra la barra de navegación -->
 
-  <div class="contenido">
+  <div class="contenido"> <!-- Contenedor principal que agrupa todas las secciones de la página -->
     
-    <section id="cartelera" class="seccion-pagina">
-      <section class="destacada">
-        <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/StreetFighter/Es/sf_desktop_poster_720x1022_2.jpg" alt="Película Principal">
+    <section id="cartelera" class="seccion-pagina"> <!-- Sección de Cartelera con su ID para navegación interna -->
+      <section class="destacada"> <!-- Cuadro destacado para la película principal de cartelera -->
+        <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/StreetFighter/Es/sf_desktop_poster_720x1022_2.jpg" alt="Película Principal"> <!-- Imagen del póster destacado -->
         
-        <div class="destacada-texto">
-          <h2>Street Fighter</h2>
-          <p>Ambientada en 1993, los distanciados luchadores callejeros Ryu (Andrew Koji) y Ken Masters (Noah Centineo) se ven obligados a volver al combate cuando la misteriosa Chun-Li (Callina Liang) los recluta para el próximo Torneo Mundial de Luchadores: un brutal enfrentamiento de puños, destino y furia. Pero detrás de esta batalla real se esconde una conspiración mortal que los obliga a enfrentarse entre sí y a los demonios de su pasado. Y si no lo hacen, ¡GAME OVER!</p>
-        </div>
-      </section>
+        <div class="destacada-texto"> <!-- Contenedor de información del cuadro destacado -->
+          <h2>Street Fighter</h2> <!-- Título de la película destacada -->
+          <p>Ambientada en 1993, los distanciados luchadores callejeros Ryu (Andrew Koji) y Ken Masters (Noah Centineo) se ven obligados a volver al combate cuando la misteriosa Chun-Li (Callina Liang) los recluta para el próximo Torneo Mundial de Luchadores: un brutal enfrentamiento de puños, destino y furia. Pero detrás de esta batalla real se esconde una conspiración mortal que los obliga a enfrentarse entre sí y a los demonios de su pasado. Y si no lo hacen, ¡GAME OVER!</p> <!-- Descripción sinopsis de la película -->
+        </div> <!-- Cierra el contenedor de texto destacado -->
+      </section> <!-- Cierra la sección de la película destacada -->
 
-      <h2 class="titulo-seccion">En Cartelera</h2>
+      <h2 class="titulo-seccion">En Cartelera</h2> <!-- Encabezado secundario para la lista de películas -->
 
-      <section class="catalogo">
-        <div class="tarjeta-pelicula">
-          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/StreetFighter/Es/sf_desktop_poster_720x1022_2.jpg" alt="Street Fighter Movie">
-          <h3>Street Fighter</h3>
-          <p class="genero">Acción / Aventura 1h 59m</p>
-          <p class="genero"> B </p>
-        </div>
+      <section class="catalogo"> <!-- Cuadrícula contenedora de las tarjetas de películas -->
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 1 -->
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/StreetFighter/Es/sf_desktop_poster_720x1022_2.jpg" alt="Street Fighter Movie"> <!-- Imagen de la película 1 -->
+          <h3>Street Fighter</h3> <!-- Título de la película 1 -->
+          <p class="genero">Acción / Aventura 1h 59m</p> <!-- Género y duración de la película 1 -->
+          <p class="genero"> B </p> <!-- Clasificación de la película 1 -->
+        </div> <!-- Cierra la tarjeta de la película 1 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://m.media-amazon.com/images/M/MV5BZmE0OWRiNzktY2MwMy00YzQ5LWFkMzctNjI1ZWQ1NTRiZGM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Veriety Movie">
-          <h3>Verity: La Sombra De Un Engaño</h3>
-          <p class="genero">Suspenso 1h 57m</p>
-          <p class="genero">B15</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 2 -->
+          <img src="https://m.media-amazon.com/images/M/MV5BZmE0OWRiNzktY2MwMy00YzQ5LWFkMzctNjI1ZWQ1NTRiZGM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Veriety Movie"> <!-- Imagen de la película 2 -->
+          <h3>Verity: La Sombra De Un Engaño</h3> <!-- Título de la película 2 -->
+          <p class="genero">Suspenso 1h 57m</p> <!-- Género y duración de la película 2 -->
+          <p class="genero">B15</p> <!-- Clasificación de la película 2 -->
+        </div> <!-- Cierra la tarjeta de la película 2 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/AvengersEndgameBonus/Es/19_Poster_720x1022px__5.jpg" alt="Avengers Movie">
-          <h3>Avengers: Endgame Bonus</h3>
-          <p class="genero">Acción / Ciencia Ficción 3h 11m</p>
-          <p class="genero">B</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 3 -->
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/AvengersEndgameBonus/Es/19_Poster_720x1022px__5.jpg" alt="Avengers Movie"> <!-- Imagen de la película 3 -->
+          <h3>Avengers: Endgame Bonus</h3> <!-- Título de la película 3 -->
+          <p class="genero">Acción / Ciencia Ficción 3h 11m</p> <!-- Género y duración de la película 3 -->
+          <p class="genero">B</p> <!-- Clasificación de la película 3 -->
+        </div> <!-- Cierra la tarjeta de la película 3 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/TuNombre/Es/Poster_WEB_Desktop_720x1022px_35__2.jpg" alt="Tu nombre Movie">
-          <h3>Tu nombre</h3>
-          <p class="genero">Animación 1h 47m</p>
-          <p class="genero">B</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 4 -->
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/TuNombre/Es/Poster_WEB_Desktop_720x1022px_35__2.jpg" alt="Tu nombre Movie"> <!-- Imagen de la película 4 -->
+          <h3>Tu nombre</h3> <!-- Título de la película 4 -->
+          <p class="genero">Animación 1h 47m</p> <!-- Género y duración de la película 4 -->
+          <p class="genero">B</p> <!-- Clasificación de la película 4 -->
+        </div> <!-- Cierra la tarjeta de la película 4 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/LaIslaOlvidada/Es/20_P_ster_720x1022px__5.jpg" alt="La isla olvidada Movie">
-          <h3>La Isla Olvidada</h3>
-          <p class="genero">Comedia, Animación, Aventura 1h 49m</p>
-          <p class="genero">A</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 5 -->
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/LaIslaOlvidada/Es/20_P_ster_720x1022px__5.jpg" alt="La isla olvidada Movie"> <!-- Imagen de la película 5 -->
+          <h3>La Isla Olvidada</h3> <!-- Título de la película 5 -->
+          <p class="genero">Comedia, Animación, Aventura 1h 49m</p> <!-- Género y duración de la película 5 -->
+          <p class="genero">A</p> <!-- Clasificación de la película 5 -->
+        </div> <!-- Cierra la tarjeta de la película 5 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/ResidentEvilNocheCero/Es/RE_720x1022_2.jpg" alt="Resident Evil Movie">
-          <h3>Resident Evil: Noche Cero</h3>
-          <p class="genero">Terror / Acción 1h 34m</p>
-          <p class="genero">B15</p>
-        </div>
-      </section>
-    </section>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de la película 6 -->
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/ResidentEvilNocheCero/Es/RE_720x1022_2.jpg" alt="Resident Evil Movie"> <!-- Imagen de la película 6 -->
+          <h3>Resident Evil: Noche Cero</h3> <!-- Título de la película 6 -->
+          <p class="genero">Terror / Acción 1h 34m</p> <!-- Género y duración de la película 6 -->
+          <p class="genero">B15</p> <!-- Clasificación de la película 6 -->
+        </div> <!-- Cierra la tarjeta de la película 6 -->
+      </section> <!-- Cierra el catálogo de películas -->
+    </section> <!-- Cierra la sección completa de Cartelera -->
 
-    <section id="estrenos" class="seccion-pagina">
-      <section class="destacada">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTxE2iH0jG51ZBucVsv-w6l3XFgYiAyrdQHKD5S0QHuQ&s=10" alt="Estreno Más Esperado">
+    <section id="estrenos" class="seccion-pagina"> <!-- Sección de Próximos Estrenos con su ID para navegación interna -->
+      <section class="destacada"> <!-- Cuadro destacado para el estreno principal -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTxE2iH0jG51ZBucVsv-w6l3XFgYiAyrdQHKD5S0QHuQ&s=10" alt="Estreno Más Esperado"> <!-- Imagen de la película de estreno destacada -->
         
-        <div class="destacada-texto">
-          <h2>La Venganza Del Charro Negro</h2>
-          <p>Después de varios años, el temible Charro Negro regresa con un nuevo propósito: vengarse de Leo San Juan y cobrar una deuda que ha quedado pendiente. Para lograrlo, liberará a algunas de las criaturas y leyendas sobrenaturales que Leo ha enfrentado a lo largo de sus aventuras, obligándolo a reencontrarse con sus antiguos enemigos. Pero esta vez, el Charro Negro tiene un objetivo mucho más personal: su hermano, Nando. Mientras las leyendas se desatan y el peligro crece, Leo deberá proteger a su hermano y reunir nuevamente a sus amigos para descubrir el verdadero plan del Charro Negro. En una aventura que llevará al grupo al límite, Leo tendrá que enfrentarse una vez más a las criaturas de su pasado y descubrir que, para derrotar al Charro Negro, no solo tendrá que demostrar su valentía, sino luchar por aquello que más quiere.</p>
-        </div>
-      </section>
+        <div class="destacada-texto"> <!-- Contenedor de texto descriptivo del estreno destacado -->
+          <h2>La Venganza Del Charro Negro</h2> <!-- Título del estreno destacado -->
+          <p>Después de varios años, el temible Charro Negro regresa con un nuevo propósito: vengarse de Leo San Juan y cobrar una deuda que ha quedado pendiente. Para lograrlo, liberará a algunas de las criaturas y leyendas sobrenaturales que Leo ha enfrentado a lo largo de sus aventuras, obligándolo a reencontrarse con sus antiguos enemigos. Pero esta vez, el Charro Negro tiene un objetivo mucho más personal: su hermano, Nando. Mientras las leyendas se desatan y el peligro crece, Leo deberá proteger a su hermano y reunir nuevamente a sus amigos para descubrir el verdadero plan del Charro Negro. En una aventura que llevará al grupo al límite, Leo tendrá que enfrentarse una vez más a las criaturas de su pasado y descubrir que, para derrotar al Charro Negro, no solo tendrá que demostrar su valentía, sino luchar por aquello que más quiere.</p> <!-- Sinopsis completa del estreno -->
+        </div> <!-- Cierra el texto del estreno destacado -->
+      </section> <!-- Cierra el cuadro destacado del estreno -->
 
-      <h2 class="titulo-seccion">Próximos Estrenos</h2>
+      <h2 class="titulo-seccion">Próximos Estrenos</h2> <!-- Título secundario de próximos estrenos -->
 
-      <section class="catalogo">
-        <div class="tarjeta-pelicula">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfT1-C0BaxyPAP5dH7nRNkBHb4sNNPrK7QJJT0DX3YW9Tc4MR17CGIInYR&s=10" alt="Estreno 1">
-          <h3>Avengers: Doomsday</h3>
-          <p class="genero">Acción / Ciencia Ficción</p>
-          <p class="genero">Diciembre 17</p>
-        </div>
+      <section class="catalogo"> <!-- Cuadrícula para los cuadros de próximos estrenos -->
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de estreno 1 -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfT1-C0BaxyPAP5dH7nRNkBHb4sNNPrK7QJJT0DX3YW9Tc4MR17CGIInYR&s=10" alt="Estreno 1"> <!-- Imagen del estreno 1 -->
+          <h3>Avengers: Doomsday</h3> <!-- Título del estreno 1 -->
+          <p class="genero">Acción / Ciencia Ficción</p> <!-- Género del estreno 1 -->
+          <p class="genero">Diciembre 17</p> <!-- Fecha de lanzamiento del estreno 1 -->
+        </div> <!-- Cierra la tarjeta de estreno 1 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDqE20IdhCtNpqD_Go46mhKfyKAoIBrKe5xF0HEChNA&s=10" alt="Estreno 2">
-          <h3>Duna: Parte Tres</h3>
-          <p class="genero">Drama / Thriller / Acción</p>
-          <p class="genero">Diciembre 17</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de estreno 2 -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDqE20IdhCtNpqD_Go46mhKfyKAoIBrKe5xF0HEChNA&s=10" alt="Estreno 2"> <!-- Imagen del estreno 2 -->
+          <h3>Duna: Parte Tres</h3> <!-- Título del estreno 2 -->
+          <p class="genero">Drama / Thriller / Acción</p> <!-- Género del estreno 2 -->
+          <p class="genero">Diciembre 17</p> <!-- Fecha de lanzamiento del estreno 2 -->
+        </div> <!-- Cierra la tarjeta de estreno 2 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx14uh5zxfD5EAvM72r-DNM8aIsyItC5tXPj8rO8Nmog&s=10" alt="Estreno 3">
-          <h3>La nueva Focker</h3>
-          <p class="genero">Comedia</p>
-          <p class="genero">Noviembre 26</p>
-        </div>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de estreno 3 -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx14uh5zxfD5EAvM72r-DNM8aIsyItC5tXPj8rO8Nmog&s=10" alt="Estreno 3"> <!-- Imagen del estreno 3 -->
+          <h3>La nueva Focker</h3> <!-- Título del estreno 3 -->
+          <p class="genero">Comedia</p> <!-- Género del estreno 3 -->
+          <p class="genero">Noviembre 26</p> <!-- Fecha de lanzamiento del estreno 3 -->
+        </div> <!-- Cierra la tarjeta de estreno 3 -->
 
-        <div class="tarjeta-pelicula">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvEUozC6AT6s5j_KCFqbPnue4jH8vFqtoShKYExtzEOgZxzds_z3FH8gqP&s=10" alt="Estreno 4">
-          <h3>Los Juegos del Hambre: Amanecer En La Cosecha</h3>
-          <p class="genero">Drama / Aventura / Acción</p>
-          <p class="genero">Próximamente</p>
-        </div>
-      </section>
-    </section>
+        <div class="tarjeta-pelicula"> <!-- Tarjeta de estreno 4 -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvEUozC6AT6s5j_KCFqbPnue4jH8vFqtoShKYExtzEOgZxzds_z3FH8gqP&s=10" alt="Estreno 4"> <!-- Imagen del estreno 4 -->
+          <h3>Los Juegos del Hambre: Amanecer En La Cosecha</h3> <!-- Título del estreno 4 -->
+          <p class="genero">Drama / Aventura / Acción</p> <!-- Género del estreno 4 -->
+          <p class="genero">Próximamente</p> <!-- Fecha o estado del estreno 4 -->
+        </div> <!-- Cierra la tarjeta de estreno 4 -->
+      </section> <!-- Cierra el catálogo de estrenos -->
+    </section> <!-- Cierra la sección de estrenos completa -->
 
-    <section id="alimentos" class="seccion-pagina">
-      <h2 class="titulo-seccion">Dulcería y Alimentos</h2>
+    <section id="alimentos" class="seccion-pagina"> <!-- Sección de Alimentos con su ID para navegación interna -->
+      <h2 class="titulo-seccion">Dulcería y Alimentos</h2> <!-- Título de la sección de comida -->
 
-      <div class="catalogo-alimentos">
-        <div class="tarjeta-alimento">
-          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_clasico_promotional.png" alt="Combo Clásico">
-          <h3>Combo Clásico</h3>
-          <p class="precio">$278.00</p>
-        </div>
+      <div class="catalogo-alimentos"> <!-- Contenedor de la lista de productos de dulcería -->
+        <div class="tarjeta-alimento"> <!-- Tarjeta del producto 1 -->
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_clasico_promotional.png" alt="Combo Clásico"> <!-- Imagen del producto 1 -->
+          <h3>Combo Clásico</h3> <!-- Nombre del producto 1 -->
+          <p class="precio">$278.00</p> <!-- Precio del producto 1 -->
+        </div> <!-- Cierra la tarjeta del producto 1 -->
 
-        <div class="tarjeta-alimento">
-          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_junior_promotional.png" alt="Combo Junior">
-          <h3>Combo Junior</h3>
-          <p class="precio">$264.00</p>
-        </div>
+        <div class="tarjeta-alimento"> <!-- Tarjeta del producto 2 -->
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_junior_promotional.png" alt="Combo Junior"> <!-- Imagen del producto 2 -->
+          <h3>Combo Junior</h3> <!-- Nombre del producto 2 -->
+          <p class="precio">$264.00</p> <!-- Precio del producto 2 -->
+        </div> <!-- Cierra la tarjeta del producto 2 -->
 
-        <div class="tarjeta-alimento">
-          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/icee-tajin-trad-promotional.png" alt="ICEE">
-          <h3>ICEE</h3>
-          <p class="precio">$107.00</p>
-        </div>
+        <div class="tarjeta-alimento"> <!-- Tarjeta del producto 3 -->
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/icee-tajin-trad-promotional.png" alt="ICEE"> <!-- Imagen del producto 3 -->
+          <h3>ICEE</h3> <!-- Nombre del producto 3 -->
+          <p class="precio">$107.00</p> <!-- Precio del producto 3 -->
+        </div> <!-- Cierra la tarjeta del producto 3 -->
 
-        <div class="tarjeta-alimento">
-          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/atmosfera/hotdog_mx_promotional.png" alt="Hot Dog">
-          <h3>Hot Dog Jumbo</h3>
-          <p class="precio">$89.00</p>
-        </div>
+        <div class="tarjeta-alimento"> <!-- Tarjeta del producto 4 -->
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/atmosfera/hotdog_mx_promotional.png" alt="Hot Dog"> <!-- Imagen del producto 4 -->
+          <h3>Hot Dog Jumbo</h3> <!-- Nombre del producto 4 -->
+          <p class="precio">$89.00</p> <!-- Precio del producto 4 -->
+        </div> <!-- Cierra la tarjeta del producto 4 -->
 
-        <div class="tarjeta-alimento">
-          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/agua_promotional.png" alt="Agua">
-          <h3>Agua enbotellada</h3>
-          <p class="precio">$40.00</p>
-        </div>
-      </div>
-    </section>
+        <div class="tarjeta-alimento"> <!-- Tarjeta del producto 5 -->
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/agua_promotional.png" alt="Agua"> <!-- Imagen del producto 5 -->
+          <h3>Agua enbotellada</h3> <!-- Nombre del producto 5 -->
+          <p class="precio">$40.00</p> <!-- Precio del producto 5 -->
+        </div> <!-- Cierra la tarjeta del producto 5 -->
+      </div> <!-- Cierra el catálogo de alimentos -->
+    </section> <!-- Cierra la sección de alimentos -->
 
-    <section id="club-cinepolis" class="seccion-pagina">
-      <h2 class="titulo-seccion">Club Cinépolis</h2>
+    <section id="club-cinepolis" class="seccion-pagina"> <!-- Sección de Club Cinépolis con su ID para navegación interna -->
+      <h2 class="titulo-seccion">Club Cinépolis</h2> <!-- Título de la sección del club -->
 
-      <div class="tarjeta-form">
-        <h3>Iniciar Sesión</h3>
-        <form>
-          <p>Correo:</p>
-          <input type="email" placeholder="ejemplo@correo.com">
+      <div class="tarjeta-form"> <!-- Tarjeta contenedora de los formularios de registro e inicio de sesión -->
+        <h3>Iniciar Sesión</h3> <!-- Título del formulario de inicio de sesión -->
+        <form> <!-- Inicio del formulario de acceso -->
+          <p>Correo:</p> <!-- Etiqueta para el campo de correo -->
+          <input type="email" placeholder="ejemplo@correo.com"> <!-- Campo de texto tipo email para escribir el correo -->
 
-          <p>Contraseña:</p>
-          <input type="password" placeholder="Tu contraseña">
+          <p>Contraseña:</p> <!-- Etiqueta para el campo de contraseña -->
+          <input type="password" placeholder="Tu contraseña"> <!-- Campo tipo contraseña que oculta el texto introducido -->
 
-          <button type="button">Ingresar</button>
-        </form>
+          <button type="button">Ingresar</button> <!-- Botón para enviar datos de inicio de sesión -->
+        </form> <!-- Cierra el formulario de inicio de sesión -->
 
-        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;">
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;"> <!-- Línea divisoria entre ambos formularios -->
 
-        <h3>Crear Cuenta</h3>
-        <form>
-          <p>Nombre Completo:</p>
-          <input type="text" placeholder="Escribe tu nombre">
+        <h3>Crear Cuenta</h3> <!-- Título del formulario de registro -->
+        <form> <!-- Inicio del formulario de registro -->
+          <p>Nombre Completo:</p> <!-- Etiqueta para el nombre -->
+          <input type="text" placeholder="Escribe tu nombre"> <!-- Campo para ingresar el nombre completo -->
 
-          <p>Correo Electrónico:</p>
-          <input type="email" placeholder="ejemplo@correo.com">
+          <p>Correo Electrónico:</p> <!-- Etiqueta para el correo electrónico -->
+          <input type="email" placeholder="ejemplo@correo.com"> <!-- Campo de entrada tipo correo -->
 
-          <p>Contraseña:</p>
-          <input type="password" placeholder="Crea una contraseña">
+          <p>Contraseña:</p> <!-- Etiqueta para crear contraseña -->
+          <input type="password" placeholder="Crea una contraseña"> <!-- Campo de tipo contraseña -->
 
-          <p>Número de Teléfono:</p>
-          <input type="tel" placeholder="10 dígitos">
+          <p>Número de Teléfono:</p> <!-- Etiqueta para el número telefónico -->
+          <input type="tel" placeholder="10 dígitos"> <!-- Campo especial de entrada tipo teléfono -->
 
-          <button type="button">Registrarme</button>
-        </form>
-      </div>
-    </section>
+          <button type="button">Registrarme</button> <!-- Botón para registrar la nueva cuenta -->
+        </form> <!-- Cierra el formulario de registro -->
+      </div> <!-- Cierra la tarjeta contenedora del formulario -->
+    </section> <!-- Cierra la sección de Club Cinépolis -->
 
-  </div>
+  </div> <!-- Cierra el contenedor de contenido principal -->
 
-  <footer>
-    <p>Izquierdo Gaytan Alexander 5°J</p>
-    <p>Cinepolis: La capital del cine</p>
-  </footer>
+  <footer> <!-- Pie de página con información del proyecto -->
+    <p>Izquierdo Gaytan Alexander 5°J</p> <!-- Nombre y grupo del alumno -->
+    <p>Cinepolis: La capital del cine</p> <!-- Lema publicitario de la marca -->
+  </footer> <!-- Cierra el pie de página -->
 
-</body>
-</html>
+</body> <!-- Cierra el cuerpo del documento HTML -->
+</html> <!-- Cierra la etiqueta principal del documento HTML -->
