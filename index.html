@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinépolis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f0f2f5;
+    }
+
+    header {
+      background-color: #03091e;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ffffff;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    nav {
+      background-color: #03091e;
+      padding-bottom: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .contenido {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .seccion-pagina {
+      margin-bottom: 50px;
+      padding-top: 10px;
+    }
+
+    .destacada {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .destacada img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .destacada-texto h2 {
+      margin-bottom: 10px;
+      color: #03091e;
+    }
+
+    .destacada-texto p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .titulo-seccion {
+      color: #03091e;
+      margin-bottom: 20px;
+    }
+
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .tarjeta-pelicula {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: calc(33.33% - 14px); 
+      padding: 15px;
+      text-align: center;
+    }
+
+    .tarjeta-pelicula img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta-pelicula h3 {
+      font-size: 16px;
+      color: #03091e;
+      margin-bottom: 5px;
+    }
+
+    .tarjeta-pelicula .genero {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .catalogo-alimentos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .tarjeta-alimento {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: calc(20% - 16px);
+      min-width: 160px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .tarjeta-alimento img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta-alimento h3 {
+      font-size: 15px;
+      color: #03091e;
+      margin-bottom: 8px;
+    }
+
+    .tarjeta-alimento .precio {
+      font-size: 16px;
+      font-weight: 700;
+      color: #008000;
+    }
+
+    .tarjeta-form {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 25px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .tarjeta-form h3 {
+      color: #03091e;
+      margin-bottom: 12px;
+    }
+
+    .tarjeta-form p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .tarjeta-form input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .tarjeta-form button {
+      width: 100%;
+      background-color: #03091e;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #03091e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>cinépolis</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#cartelera">Cartelera</a></li>
+      <li><a href="#estrenos">Estrenos</a></li>
+      <li><a href="#alimentos">Alimentos</a></li>
+      <li><a href="#club-cinepolis">Club Cinépolis</a></li>
+    </ul>
+  </nav>
+
+  <div class="contenido">
+    
+    <section id="cartelera" class="seccion-pagina">
+      <section class="destacada">
+        <img src="https://static.wikia.nocookie.net/doblaje/images/d/d7/Street_Fighter_-_Poster.jpg/revision/latest?cb=20260417083129&path-prefix=es" alt="Película Principal">
+        
+        <div class="destacada-texto">
+          <h2>Street Fighter</h2>
+          <p>Ambientada en 1993, los distanciados luchadores callejeros Ryu (Andrew Koji) y Ken Masters (Noah Centineo) se ven obligados a volver al combate cuando la misteriosa Chun-Li (Callina Liang) los recluta para el próximo Torneo Mundial de Luchadores: un brutal enfrentamiento de puños, destino y furia. Pero detrás de esta batalla real se esconde una conspiración mortal que los obliga a enfrentarse entre sí y a los demonios de su pasado. Y si no lo hacen, ¡GAME OVER!</p>
+        </div>
+      </section>
+
+      <h2 class="titulo-seccion">En Cartelera</h2>
+
+      <section class="catalogo">
+        <div class="tarjeta-pelicula">
+          <img src="https://static.wikia.nocookie.net/doblaje/images/d/d7/Street_Fighter_-_Poster.jpg/revision/latest?cb=20260417083129&path-prefix=es" alt="Street Fighter Movie">
+          <h3>Street Fighter</h3>
+          <p class="genero">Acción / Aventura 1h 59m</p>
+          <p class="genero"> B </p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://m.media-amazon.com/images/M/MV5BZmE0OWRiNzktY2MwMy00YzQ5LWFkMzctNjI1ZWQ1NTRiZGM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Veriety Movie">
+          <h3>Verity: La Sombra De Un Engaño</h3>
+          <p class="genero">Suspenso 1h 57m</p>
+          <p class="genero">B15</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/AvengersEndgameBonus/Es/19_Poster_720x1022px__5.jpg" alt="Avengers Movie">
+          <h3>Avengers: Endgame Bonus</h3>
+          <p class="genero">Acción / Ciencia Ficción 3h 11m</p>
+          <p class="genero">B</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/TuNombre/Es/Poster_WEB_Desktop_720x1022px_35__2.jpg" alt="Tu nombre Movie">
+          <h3>Tu nombre</h3>
+          <p class="genero">Animación 1h 47m</p>
+          <p class="genero">B</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/LaIslaOlvidada/Es/20_P_ster_720x1022px__5.jpg" alt="La isla olvidada Movie">
+          <h3>La Isla Olvidada</h3>
+          <p class="genero">Comedia, Animación, Aventura 1h 49m</p>
+          <p class="genero">A</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://pimcore-content.cinepolis.com/assets/Mexico/Tickets/Movies/ResidentEvilNocheCero/Es/RE_720x1022_2.jpg" alt="Resident Evil Movie">
+          <h3>Resident Evil: Noche Cero</h3>
+          <p class="genero">Terror / Acción 1h 34m</p>
+          <p class="genero">B15</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="estrenos" class="seccion-pagina">
+      <section class="destacada">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTxE2iH0jG51ZBucVsv-w6l3XFgYiAyrdQHKD5S0QHuQ&s=10" alt="Estreno Más Esperado">
+        
+        <div class="destacada-texto">
+          <h2>La Venganza Del Charro Negro</h2>
+          <p>Después de varios años, el temible Charro Negro regresa con un nuevo propósito: vengarse de Leo San Juan y cobrar una deuda que ha quedado pendiente. Para lograrlo, liberará a algunas de las criaturas y leyendas sobrenaturales que Leo ha enfrentado a lo largo de sus aventuras, obligándolo a reencontrarse con sus antiguos enemigos. Pero esta vez, el Charro Negro tiene un objetivo mucho más personal: su hermano, Nando. Mientras las leyendas se desatan y el peligro crece, Leo deberá proteger a su hermano y reunir nuevamente a sus amigos para descubrir el verdadero plan del Charro Negro. En una aventura que llevará al grupo al límite, Leo tendrá que enfrentarse una vez más a las criaturas de su pasado y descubrir que, para derrotar al Charro Negro, no solo tendrá que demostrar su valentía, sino luchar por aquello que más quiere.</p>
+        </div>
+      </section>
+
+      <h2 class="titulo-seccion">Próximos Estrenos</h2>
+
+      <section class="catalogo">
+        <div class="tarjeta-pelicula">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfT1-C0BaxyPAP5dH7nRNkBHb4sNNPrK7QJJT0DX3YW9Tc4MR17CGIInYR&s=10" alt="Estreno 1">
+          <h3>Avengers: Doomsday</h3>
+          <p class="genero">Acción / Ciencia Ficción</p>
+          <p class="genero">Diciembre 17</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDqE20IdhCtNpqD_Go46mhKfyKAoIBrKe5xF0HEChNA&s=10" alt="Estreno 2">
+          <h3>Duna: Parte Tres</h3>
+          <p class="genero">Drama / Thriller / Acción</p>
+          <p class="genero">Diciembre 17</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx14uh5zxfD5EAvM72r-DNM8aIsyItC5tXPj8rO8Nmog&s=10" alt="Estreno 3">
+          <h3>La nueva Focker</h3>
+          <p class="genero">Comedia</p>
+          <p class="genero">Noviembre 26</p>
+        </div>
+
+        <div class="tarjeta-pelicula">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvEUozC6AT6s5j_KCFqbPnue4jH8vFqtoShKYExtzEOgZxzds_z3FH8gqP&s=10" alt="Estreno 4">
+          <h3>Los Juegos del Hambre: Amanecer En La Cosecha</h3>
+          <p class="genero">Drama / Aventura / Acción</p>
+          <p class="genero">Próximamente</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="alimentos" class="seccion-pagina">
+      <h2 class="titulo-seccion">Dulcería y Alimentos</h2>
+
+      <div class="catalogo-alimentos">
+        <div class="tarjeta-alimento">
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_clasico_promotional.png" alt="Combo Clásico">
+          <h3>Combo Clásico</h3>
+          <p class="precio">$278.00</p>
+        </div>
+
+        <div class="tarjeta-alimento">
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/combo_junior_promotional.png" alt="Combo Junior">
+          <h3>Combo Junior</h3>
+          <p class="precio">$264.00</p>
+        </div>
+
+        <div class="tarjeta-alimento">
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/icee-tajin-trad-promotional.png" alt="ICEE">
+          <h3>ICEE</h3>
+          <p class="precio">$107.00</p>
+        </div>
+
+        <div class="tarjeta-alimento">
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/atmosfera/hotdog_mx_promotional.png" alt="Hot Dog">
+          <h3>Hot Dog Jumbo</h3>
+          <p class="precio">$89.00</p>
+        </div>
+
+        <div class="tarjeta-alimento">
+          <img src="https://foods-static-content.cinepolis.com/redesign/MX/menus/tradicional/agua_promotional.png" alt="Agua">
+          <h3>Agua enbotellada</h3>
+          <p class="precio">$40.00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="club-cinepolis" class="seccion-pagina">
+      <h2 class="titulo-seccion">Club Cinépolis</h2>
+
+      <div class="tarjeta-form">
+        <h3>Iniciar Sesión</h3>
+        <form>
+          <p>Correo:</p>
+          <input type="email" placeholder="ejemplo@correo.com">
+
+          <p>Contraseña:</p>
+          <input type="password" placeholder="Tu contraseña">
+
+          <button type="button">Ingresar</button>
+        </form>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <h3>Crear Cuenta</h3>
+        <form>
+          <p>Nombre Completo:</p>
+          <input type="text" placeholder="Escribe tu nombre">
+
+          <p>Correo Electrónico:</p>
+          <input type="email" placeholder="ejemplo@correo.com">
+
+          <p>Contraseña:</p>
+          <input type="password" placeholder="Crea una contraseña">
+
+          <p>Número de Teléfono:</p>
+          <input type="tel" placeholder="10 dígitos">
+
+          <button type="button">Registrarme</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Izquierdo Gaytan Alexander 5°J</p>
+    <p>Cinepolis: La capital del cine</p>
+  </footer>
+
+</body>
+</html>
